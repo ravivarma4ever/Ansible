@@ -7,10 +7,10 @@ terraform {
   }
 }
 
-provider "azuread" {
+#provider "azuread" {
   #use_msi   = true
-  tenant_id = var.tenant_id
-}
+  #tenant_id = var.tenant_id
+#}
 
 #terraform {
 #  backend "azurerm" {
@@ -25,13 +25,13 @@ provider "azuread" {
 #  }
 #}
 
-data "terraform_remote_state" "azureadgroup" {
-  backend = "azurerm"
-  config = {
-    resource_group_name  = var.storageaccountrg
-    storage_account_name = var.storageaccountname
-    container_name       = "tfstate"
-    key                  = var.statekey
-    sas_token            = "abcdefghijklmnopqrstuvwxyz0123456789..."  # Can also be set via `ARM_SAS_TOKEN` environment variable.
-  }
-}
+#data "terraform_remote_state" "azureadgroup" {
+#  backend = "azurerm"
+#  config = {
+#    resource_group_name  = var.storageaccountrg
+#    storage_account_name = var.storageaccountname
+#    container_name       = "tfstate"
+#    key                  = var.statekey
+#    sas_token            = "abcdefghijklmnopqrstuvwxyz0123456789..."  # Can also be set via `ARM_SAS_TOKEN` environment variable.
+#  }
+#}
